@@ -58,8 +58,11 @@ siteLogOn({
 
 
 ## Upcoming Updates
+
 *asynchronous
+
 *ID or Class selections
+
 
 
 ## Authors
