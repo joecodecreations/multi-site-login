@@ -1,4 +1,4 @@
-# Multi-site-login
+# Multi-site-login using selenium-webdriver and nodejs 
 ## Getting Started
 Download files to project directory
 
