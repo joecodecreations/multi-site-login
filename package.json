@@ -1,0 +1,16 @@
+{
+  "name": "multiSiteLogin",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "Joseph Sanchez",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^2.25.1",
+    "geckodriver": "^1.2.0",
+    "selenium-webdriver": "^3.0.0-beta-3"
+  }
+}
