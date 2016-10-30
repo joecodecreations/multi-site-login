@@ -139,10 +139,3 @@ function letsWait(ms){
   });
 
 }
-
-Accepting Alerts
--------------------------
-var alert = driver.switchTo().alert();
-alert.accept();
-
-*/
