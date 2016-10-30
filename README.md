@@ -59,9 +59,9 @@ siteLogOn({
 
 ## Upcoming Updates
 
-*asynchronous
+* asynchronous
 
-*ID or Class selections
+* ID or Class selections
 
 
 
