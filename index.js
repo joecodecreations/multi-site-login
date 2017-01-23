@@ -61,9 +61,6 @@ siteLogOn({
   site_title: "Facebook"
 });
 
-
-
-
 function siteLogOn(data){
   console.log("Starting Login Process for "+data['url']);
 
@@ -75,67 +72,68 @@ function siteLogOn(data){
 
   /* Enter Email Address */
   driver.findElement(By.id(data['email_identifier'])).then(function(webElement) {
-                //login exists send pw
-                driver.findElement(By.id(data['email_identifier'])).sendKeys(data['site_email']);
-                console.log(data['url']+": email field found!");
+    //login exists send pw
+    driver.findElement(By.id(data['email_identifier'])).sendKeys(data['site_email']);
+    console.log(data['url']+": email field found!");
 
-        }, function(err) {
-              if(logErrors){ console.log(err); }
-              console.log(data['url']+":login-email error!");
+  }, function(err) {
+        if(logErrors){ console.log(err); }
+        console.log(data['url']+":login-email error!");
   });
 
 
   /* Enter password */
   driver.findElement(By.id(data['password_identifier'])).then(function(webElement) {
-            //login exists send pw
-            driver.findElement(By.id(data['password_identifier'])).sendKeys(data['site_password']);
-            console.log(data['url']+":Password Field Found!");
-      }, function(err) {
-          if(logErrors){ console.log(err); }
-          console.log(data['url']+":login-password error!");
-      });
+    //login exists send pw
+    driver.findElement(By.id(data['password_identifier'])).sendKeys(data['site_password']);
+    console.log(data['url']+":Password Field Found!");
+
+  }, function(err) {
+
+    if(logErrors){ console.log(err); }
+    console.log(data['url']+":login-password error!");
+
+  });
 
   /* Login Submit */
   driver.findElement(By.id(data['submit_identifier'])).then(function(webElement) {
-        //login exists submit click
-        driver.findElement(By.id(data['submit_identifier'])).click();
-        console.log(data['url']+":submit Button Found!");
-      }, function(err) {
-        if(logErrors){ console.log(err); }
-        console.log(data['url']+":Login Submit Button Error");
+    //login exists submit click
+    driver.findElement(By.id(data['submit_identifier'])).click();
+    console.log(data['url']+":submit Button Found!");
+  }, function(err) {
+    if(logErrors){ console.log(err); }
+    console.log(data['url']+":Login Submit Button Error");
   });
 
   /* Validate login By Checking Page title */
   driver.getTitle().then(function(title) {
-        //we have the title
-        if(title == data['site_title']){
-             console.log("You're logged Into "+data['url']+"!");
-             console.log("\n\n\n");
-             return title;
-           } else {
-             console.log("Whoops! Wrong Page or bad title!");
-           }
-      }, function(err) {
-        if(logErrors){ console.log(err); }
-        console.log(data['url']+":This title doesn't match");
+    //we have the title
+    if(title == data['site_title']){
+      console.log("You're logged into "+data['url']+"!"+"\n\n\n");
+      return title;
+    } else {
+       console.log("Whoops! Wrong Page or bad title!");
+    }
+
+  }, function(err) {
+
+    if(logErrors){ console.log(err); }
+    console.log(data['url']+":This title doesn't match");
 
   });
 
-
   driver.quit();
-} // end site log on func
-
-
+}
 
 /* Functions */
-
 function letsWait(ms){
   /* wait until page title matches but it never would so just a wait for set duration  */
   driver.wait(until.titleIs('12312313123123'), ms).then(function(err) {
       //will never be true
-      }, function(err) {
-      //timer has completed
-      return;
+  }, function(err) {
+
+    //timer has completed
+    return;
   });
 
 }
